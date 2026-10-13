@@ -1,8 +1,8 @@
 package fr.esisar.bergerie.mouton;
+import fr.esisar.bergerie.cloche.Cloche;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -14,4 +14,7 @@ public class Mouton extends PanacheEntity {
 
     @Column(nullable = false)
     public LocalDate dateNaissance;
+    
+    @OneToOne
+    public Cloche cloche;
 }
